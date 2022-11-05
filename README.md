@@ -21,7 +21,7 @@ Finally, we suggest setting Freezircular up as a pre-commit hook, e.g., using
 [husky](https://typicode.github.io/husky/#/):
 
 ```
-npm husky add .husky/pre-commit freezircular
+npm husky add .husky/pre-commit npx freezircular
 ```
 
 ## Settings

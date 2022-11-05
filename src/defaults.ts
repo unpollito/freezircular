@@ -10,5 +10,5 @@ export const defaultPaths = [
 export const defaultConfig: Omit<FreezircularConfig, "entryPath"> = {
   autoAddDeps: true,
   previousDepsPath: ".freezircularDeps",
-  verbose: false,
+  verbose: true,
 };

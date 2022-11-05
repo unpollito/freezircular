@@ -2,6 +2,6 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npm run lint
-npx prettier -w src/**/*.ts
+npx pretty-quick --staged
 npm run build
 node dist/index.js

@@ -1,40 +1,41 @@
 {
-    "name": "freezircular",
-    "main": "dist/index.js",
-    "version": "1.0.0",
-    "description": "A script to prevent new circular dependencies from being added",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/unpollito/freezircular"
-    },
-    "homepage": "https://github.com/unpollito/freezircular",
-    "author": "David Martín-González",
-    "license": "MIT",
-    "scripts": {
-        "start": "ts-node src/index.ts",
-        "build": "tsc",
-        "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
-        "prepare": "husky install"
-    },
-    "devDependencies": {
-        "@types/eslint": "7.2.6",
-        "@types/madge": "^5.0.0",
-        "@types/node": "^18.11.9",
-        "@typescript-eslint/eslint-plugin": "4.14.2",
-        "@typescript-eslint/parser": "4.14.2",
-        "eslint": "7.19.0",
-        "husky": "^8.0.1",
-        "prettier": "^2.7.1",
-        "ts-node": "^10.9.1",
-        "typescript": "4.1.3"
-    },
-    "engines": {
-        "node": ">=14.0.0"
-    },
-    "dependencies": {
-        "madge": "^5.0.1"
-    },
-    "freezircular": {
-        "verbose": true
-    }
+  "name": "freezircular",
+  "main": "dist/index.js",
+  "version": "1.0.0",
+  "description": "A script to prevent new circular dependencies from being added",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unpollito/freezircular"
+  },
+  "homepage": "https://github.com/unpollito/freezircular",
+  "author": "David Martín-González",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@types/eslint": "7.2.6",
+    "@types/madge": "^5.0.0",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "4.14.2",
+    "@typescript-eslint/parser": "4.14.2",
+    "eslint": "7.19.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
+    "ts-node": "^10.9.1",
+    "typescript": "4.1.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "madge": "^5.0.1"
+  },
+  "freezircular": {
+    "verbose": true
+  }
 }

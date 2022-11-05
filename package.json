@@ -1,6 +1,7 @@
 {
   "name": "freezircular",
   "main": "dist/index.js",
+  "bin": "dist/index.js",
   "types": "dist/index.d.ts",
   "version": "1.0.0",
   "description": "A script to prevent new circular dependencies from being added",

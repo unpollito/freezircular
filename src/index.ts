@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { main } from "./standaloneRun";
 
 export { verifyCircularDeps } from "./verifyCircularDeps";

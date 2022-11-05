@@ -1,12 +1,16 @@
 {
   "name": "freezircular",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "version": "1.0.0",
   "description": "A script to prevent new circular dependencies from being added",
   "repository": {
     "type": "git",
     "url": "https://github.com/unpollito/freezircular"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "homepage": "https://github.com/unpollito/freezircular",
   "author": "David Martín-González",
   "license": "MIT",
@@ -14,7 +18,8 @@
     "start": "ts-node src/index.ts",
     "build": "tsc",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepublishOnly": "npm run lint && npm run build"
   },
   "devDependencies": {
     "@types/eslint": "7.2.6",

@@ -1,12 +1,13 @@
 {
     "name": "freezircular",
     "main": "dist/index.js",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "A script to prevent new circular dependencies from being added",
     "repository": {
         "type": "git",
         "url": "https://github.com/unpollito/freezircular"
     },
+    "homepage": "https://github.com/unpollito/freezircular",
     "author": "David Martín-González",
     "license": "MIT",
     "scripts": {

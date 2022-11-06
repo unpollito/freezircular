@@ -64,13 +64,19 @@ const getIsOldDependency = ({
   const filePreviousDeps = [
     ...previousDeps.fileToDepsMap[entryWithFewestDeps],
   ].map((index) => previousDeps.list[index]);
+
   const resortedDep = [
     ...dep.slice(sortedFiles[0].index),
     ...dep.slice(0, sortedFiles[0].index),
   ];
-  return filePreviousDeps.some(
-    (dep) => JSON.stringify(dep) === JSON.stringify(resortedDep)
-  );
+  return filePreviousDeps.some((currentDep) => {
+    const fileIndex = currentDep.indexOf(entryWithFewestDeps);
+    const resortedCurrentDep = [
+      ...currentDep.slice(fileIndex),
+      ...currentDep.slice(0, fileIndex),
+    ];
+    return JSON.stringify(resortedDep) === JSON.stringify(resortedCurrentDep);
+  });
 };
 
 interface PreviousDeps {

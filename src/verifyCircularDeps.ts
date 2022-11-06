@@ -70,6 +70,9 @@ const getIsOldDependency = ({
     ...dep.slice(0, sortedFiles[0].index),
   ];
   return filePreviousDeps.some((currentDep) => {
+    if (currentDep.length !== resortedDep.length) {
+      return false;
+    }
     const fileIndex = currentDep.indexOf(entryWithFewestDeps);
     const resortedCurrentDep = [
       ...currentDep.slice(fileIndex),

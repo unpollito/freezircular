@@ -62,7 +62,7 @@ Finally, it's suggested to set Freezircular up as a pre-commit hook, e.g., using
 [husky](https://typicode.github.io/husky/#/):
 
 ```
-npx husky add .husky/pre-commit npx freezircular
+npx husky add .husky/pre-commit "npx freezircular"
 ```
 
 Execution will fail (i.e., the commit will be aborted) if Freezircular detects any new circular

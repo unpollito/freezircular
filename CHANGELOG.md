@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.0.4
+
+Use a custom version of `madge` to support Node 18, since at the moment (2022-11-24), it has
+a npm dependency which requires Node 16. Hopefully this will be changed in `madge` soon and
+we'll go back to the official `madge` version.
+
 ## 1.0.3
 
 Fix a bug where file sorting within dependencies was **very** broken and thus a lot of old

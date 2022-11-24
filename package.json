@@ -39,7 +39,7 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "madge": "^5.0.1"
+    "madge": "git+https://github.com/unpollito/madge.git#e7acd9d41e6da50c599314e85a1c66b26e0bcf13"
   },
   "freezircular": {
     "verbose": true

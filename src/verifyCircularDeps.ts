@@ -25,10 +25,12 @@ export const verifyCircularDeps = async (
   const removedDeps = [];
 
   for (const [index, dep] of circularDeps.entries()) {
-    if (getIsOldDependency({ dep, previousDeps })) {
+    // Ignore dependencies with length 1 (a file depending on itself) - these could be caused by this issue:
+    // https://github.com/pahen/madge/issues/306
+    if (getIsOldDependency({dep, previousDeps})) {
       previousDepsFound[index] = true;
       remainingDeps.push(dep);
-    } else {
+    } else if (dep.length > 1) {
       newDeps.push(dep);
     }
   }

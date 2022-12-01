@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.1.1
+
+Do not report on circular dependencies of length 1 (i.e., files depending on themselves).
+These could be caused by a bug in `madge`: https://github.com/pahen/madge/issues/306
+
 ## 1.1.0
 
 Ensure that Freezircular tracks dependencies on .js, .jsx, .ts and .tsx files.

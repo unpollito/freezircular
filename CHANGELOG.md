@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.0.5
+## 1.1.0
 
 Ensure that Freezircular tracks dependencies on .js, .jsx, .ts and .tsx files.
 

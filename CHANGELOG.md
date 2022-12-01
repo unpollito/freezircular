@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.5
+
+Ensure that Freezircular tracks dependencies on .js, .jsx, .ts and .tsx files.
+
 ## 1.0.4
 
 Use a custom version of `madge` to support Node 18, since at the moment (2022-11-24), it has

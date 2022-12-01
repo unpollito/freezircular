@@ -12,7 +12,9 @@ export const verifyCircularDeps = async (
   const previousDepsPath =
     params.previousDepsPath ?? defaultConfig.previousDepsPath;
   const previousDeps = loadPreviousDeps(previousDepsPath);
-  const madgeResult = await madge(entryPath);
+  const madgeResult = await madge(entryPath, {
+    fileExtensions: ["js", "jsx", "ts", "tsx"]
+  });
   const circularDeps = madgeResult.circular();
 
   const previousDepsFound: boolean[] = new Array(previousDeps.list.length).fill(

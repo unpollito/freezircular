@@ -113,7 +113,7 @@ const writeDepsToDisk = (
   config: FreezircularConfig,
   deps: string[][]
 ): void => {
-  fs.writeFileSync(config.previousDepsPath, JSON.stringify(deps));
+  fs.writeFileSync(config.previousDepsPath, JSON.stringify(deps, undefined, 2));
 };
 
 const addDepsToGit = (config: FreezircularConfig): void => {

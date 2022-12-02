@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.2.0
+
+Pretty-print `.freezircularDeps` by default instead of dropping all the output in a single
+line.
+
 ## 1.1.1
 
 Do not report on circular dependencies of length 1 (i.e., files depending on themselves).

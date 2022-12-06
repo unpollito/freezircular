@@ -13,7 +13,8 @@ export const verifyCircularDeps = async (
     params.previousDepsPath ?? defaultConfig.previousDepsPath;
   const previousDeps = loadPreviousDeps(previousDepsPath);
   const madgeResult = await madge(entryPath, {
-    fileExtensions: ["js", "jsx", "ts", "tsx"]
+    fileExtensions: ["js", "jsx", "ts", "tsx"],
+    tsConfig: params.tsConfig ?? null,
   });
   const circularDeps = madgeResult.circular();
 
@@ -27,11 +28,13 @@ export const verifyCircularDeps = async (
   for (const [index, dep] of circularDeps.entries()) {
     // Ignore dependencies with length 1 (a file depending on itself) - these could be caused by this issue:
     // https://github.com/pahen/madge/issues/306
-    if (getIsOldDependency({dep, previousDeps})) {
-      previousDepsFound[index] = true;
-      remainingDeps.push(dep);
-    } else if (dep.length > 1) {
-      newDeps.push(dep);
+    if (dep.length > 1) {
+      if (getIsOldDependency({ dep, previousDeps })) {
+        previousDepsFound[index] = true;
+        remainingDeps.push(dep);
+      } else {
+        newDeps.push(dep);
+      }
     }
   }
 

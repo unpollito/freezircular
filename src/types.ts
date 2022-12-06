@@ -1,6 +1,7 @@
 export interface VerifyDepsProps {
   entryPath?: string;
   previousDepsPath?: string;
+  tsConfig?: string | null;
 }
 
 export interface VerifyDepsResult {
@@ -13,5 +14,6 @@ export interface FreezircularConfig {
   autoAddDeps: boolean;
   entryPath: string;
   previousDepsPath: string;
+  tsConfig: string | null;
   verbose: boolean;
 }

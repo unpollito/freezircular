@@ -12,6 +12,7 @@ export const main = (): void => {
   verifyCircularDeps({
     entryPath: config.entryPath,
     previousDepsPath: config.previousDepsPath,
+    tsConfig: config.tsConfig,
   }).then(
     (result) => {
       if (isBaseline) {

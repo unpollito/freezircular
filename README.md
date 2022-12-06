@@ -23,7 +23,8 @@ Make sure to set up the settings in your `package.json` file, on a property call
         "entryPath": "src/index.ts",
         "autoAddDeps": true,
         "previousDepsPath": ".freezircularDeps",
-        "verbose": true
+        "verbose": true,
+        "tsConfig": "tsconfig.json"
    },
 ```
 
@@ -41,6 +42,10 @@ Make sure to set up the settings in your `package.json` file, on a property call
 
 - `verbose`: whether to show a message whenever there are no new circular dependencies
   introduced. Defaults to `true`.
+
+- `tsConfig`: route to your `tsconfig.json` file, if you're using TS. If it's not set,
+  `freezircular` will try to use a `tsconfig.json` file if it finds one, otherwise it'll
+  be ignored.
 
 ### Establish a baseline
 

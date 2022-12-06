@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.3.0
+
+- Enable support for tsconfig.json: if there's one, freezircular will load it automatically
+  and pass it to `madge`. You can also specify now a `tsConfig` parameter in `package.json`.
+- Fix issue where circular dependencies of length 1 were still being considered when
+  counting the number of removed circular dependencies.
+
 ## 1.2.0
 
 Pretty-print `.freezircularDeps` by default instead of dropping all the output in a single

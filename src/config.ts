@@ -13,6 +13,7 @@ export const loadConfig = (): FreezircularConfig => {
 
   const config: Omit<FreezircularConfig, "entryPath"> = {
     ...defaultConfig,
+    tsConfig: getTsConfigUrl(),
     ...(packageJson.freezircular ?? {}),
   };
   const entryPath = getEntryPath(config);
@@ -46,3 +47,6 @@ export const getDefaultEntryPath = (): string | undefined => {
   }
   return undefined;
 };
+
+const getTsConfigUrl = (): string | undefined =>
+  fs.existsSync("tsconfig.json") ? "tsconfig.json" : undefined;

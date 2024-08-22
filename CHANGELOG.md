@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.5.0
+
+Ignore async imports and type imports when looking for circular dependencies.
+
 ## 1.4.0
 
 Set a consistent order for circular deps in `.freezircularDeps`. The order used to be

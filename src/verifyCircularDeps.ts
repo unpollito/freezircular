@@ -15,6 +15,16 @@ export const verifyCircularDeps = async (
   const madgeResult = await madge(entryPath, {
     fileExtensions: ["js", "jsx", "ts", "tsx"],
     tsConfig: params.tsConfig ?? null,
+    detectiveOptions: {
+      ts: {
+        skipTypeImports: true,
+        skipAsyncImports: true,
+      },
+      tsx: {
+        skipTypeImports: true,
+        skipAsyncImports: true,
+      },
+    },
   });
   const circularDeps = madgeResult.circular();
 

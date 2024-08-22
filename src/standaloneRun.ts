@@ -114,8 +114,41 @@ const writeDepsToDisk = (
   config: FreezircularConfig,
   deps: string[][]
 ): void => {
-  fs.writeFileSync(config.previousDepsPath, JSON.stringify(deps, undefined, 2));
+  fs.writeFileSync(
+    config.previousDepsPath,
+    JSON.stringify(orderDependencies(deps), undefined, 2)
+  );
 };
+
+const orderDependencies = (deps: string[][]) =>
+  deps
+    .map((dep) => {
+      let minFile = dep[0];
+      let minIndex = 0;
+      dep.forEach((file, fileIndex) => {
+        if (file < minFile) {
+          minFile = file;
+          minIndex = fileIndex;
+        }
+      });
+      return [...dep.slice(minIndex), ...dep.slice(0, minIndex)];
+    })
+    .sort((a, b) => {
+      let index = 0;
+      while (a[index] && b[index]) {
+        if (a[index] < b[index]) {
+          return -1;
+        } else if (a[index] > b[index]) {
+          return 1;
+        }
+        index++;
+      }
+      if (!a[index]) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
 
 const addDepsToGit = (config: FreezircularConfig): void => {
   exec(`git add ${config.previousDepsPath}`, (error, stdout, stderr) => {

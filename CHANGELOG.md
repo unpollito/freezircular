@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.4.0
+
+Set a consistent order for circular deps in `.freezircularDeps`. The order used to be
+non-deterministic, which caused the dependencies to move around between runs, thus making
+diffs harder.
+
 ## 1.3.0
 
 - Enable support for tsconfig.json: if there's one, freezircular will load it automatically
